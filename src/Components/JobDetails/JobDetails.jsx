@@ -1,11 +1,15 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
 const JobDetails = () => {
   const jobs = useLoaderData();
   const { id } = useParams();
   const idInt = parseInt(id);
   const job = jobs.find((job) => job.id === idInt);
   console.log(job);
+  const notify = () => toast("Your Application has been Successful Submitted ✅");
+
   return (
     <div>
       <h2 className="text-center text-5xl font-semibold pt-10">Job Details </h2>
@@ -55,10 +59,12 @@ const JobDetails = () => {
               </div>
             </form>
             <div className="form-control mt-6">
-              <Link><button className="btn bg-gradient-to-r from-sky-500 to-indigo-500 w-96 text-white">Apply Now</button></Link>
+              <Link><button onClick={notify} className="btn bg-gradient-to-r from-sky-500 to-indigo-500 w-96 text-white">Apply Now</button></Link>
             </div>
           </div>
         </div>
+        <ToastContainer />
+
       </div>
     </div>
   );
