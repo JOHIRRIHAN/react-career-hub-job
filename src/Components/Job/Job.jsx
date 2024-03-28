@@ -1,7 +1,11 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/prop-types */
 import { FaLocationDot } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Job = ({ job }) => {
   const {
+    id,
     job_title,
     logo,
     company_name,
@@ -33,9 +37,12 @@ const Job = ({ job }) => {
           </p>
           <p>$ Salary: {salary}</p>
         </div>
-        <button className="btn bg-gradient-to-r from-sky-500 to-indigo-500 text-white w-28">View Details</button>
+        <Link to={`/job/${id}`}>
+          <button className="btn bg-gradient-to-r from-sky-500 to-indigo-500 text-white w-28">
+            View Details
+          </button>
+        </Link>
       </div>
-      
     </div>
   );
 };
