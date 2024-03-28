@@ -15,13 +15,13 @@ const FeatureJob = () => {
   return (
     <div>
       <div>
-        <h2 className="text-4xl text-center">Feature Job: {jobs.length}</h2>
-        <p className="text-center">
+        <h2 className="text-4xl font-semibold text-center">Feature Job</h2>
+        <p className="text-center py-10">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis,
           aperiam!
         </p>
       </div>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 gap-6">
         {
             jobs.map(job=> <Job key={job.id} job={job}></Job>)
         }
