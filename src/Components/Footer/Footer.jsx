@@ -1,7 +1,8 @@
 const Footer = () => {
   return (
     <div>
-      <footer className="footer grid-rows-2 p-10 bg-neutral text-neutral-content">
+      <footer className=" grid-rows-2 p-10 bg-neutral text-neutral-content">
+        <div className="footer max-w-6xl mx-auto">
         <nav>
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>
@@ -43,6 +44,7 @@ const Footer = () => {
           <a className="link link-hover">iPhone</a>
           <a className="link link-hover">Android</a>
         </nav>
+        </div>
       </footer>
     </div>
   );

@@ -1,4 +1,25 @@
+import { NavLink } from "react-router-dom";
+
 const Header = () => {
+  const navBar = (
+    <>
+      <li>
+        <NavLink to={'/'}>Home</NavLink>
+      </li>
+      <li>
+        <NavLink to={'/jobs'}>Jobs</NavLink>
+      </li>
+      <li>
+        <NavLink to={'/statics'}>Statistics</NavLink>
+      </li>
+      <li>
+        <NavLink to={'/applied'}>Applied Job</NavLink>
+      </li>
+      <li>
+        <NavLink to={'/blogs'}>Blogs</NavLink>
+      </li>
+    </>
+  );
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -22,36 +43,24 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm text-lg font-semibold font-[poppins] dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm text-lg font-semibold dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Statistics</a>
-              </li>
-              <li>
-                <a>Applied Job</a>
-              </li>
-              <li>
-                <a>Blog</a>
-              </li>
+              {
+                navBar
+              }
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">CareerHub</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-lg font-semibold font-[poppins]">
-            <li>
-              <a>Statistics</a>
-            </li>
-            <li>
-              <a>Applied Job</a>
-            </li>
-            <li>
-              <a>Blog</a>
-            </li>
+          <ul className="menu menu-horizontal px-1 text-lg font-semibold ">
+            {
+                navBar
+            }
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className="btn bg-gradient-to-r from-sky-500 to-indigo-500 px-8 text-white">Start Applying</a>
         </div>
       </div>
     </div>
