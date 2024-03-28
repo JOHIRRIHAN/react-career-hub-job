@@ -4,6 +4,8 @@ import Job from "../Job/Job";
 
 const FeatureJob = () => {
 
+    const [dataLength, setDataLength] = useState(4)
+
     const [jobs, setJobs] = useState([]);
 
     useEffect(()=>{
@@ -23,8 +25,12 @@ const FeatureJob = () => {
       </div>
       <div className="grid grid-cols-2 gap-6">
         {
-            jobs.map(job=> <Job key={job.id} job={job}></Job>)
+            jobs.slice(0,dataLength).map(job=> <Job key={job.id} job={job}></Job>)
         }
+      </div>
+      <div className={dataLength === jobs.length && 'hidden'}>
+      <button onClick={()=> setDataLength(jobs.length)}
+       className="btn bg-gradient-to-r from-sky-500 to-indigo-500 text-white w-28 text-center my-20 ">See All Jobs</button>
       </div>
     </div>
   );
