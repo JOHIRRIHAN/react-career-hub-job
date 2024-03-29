@@ -2,13 +2,17 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
+import { saveJobApplication } from "../LocalStorage/localstorage";
 const JobDetails = () => {
   const jobs = useLoaderData();
   const { id } = useParams();
   const idInt = parseInt(id);
   const job = jobs.find((job) => job.id === idInt);
   console.log(job);
-  const notify = () => toast("Your Application has been Successful Submitted ✅");
+
+  const notify = () =>{
+    saveJobApplication(idInt);
+    toast("Your Application has been Successful Submitted ✅")};
 
   return (
     <div>
